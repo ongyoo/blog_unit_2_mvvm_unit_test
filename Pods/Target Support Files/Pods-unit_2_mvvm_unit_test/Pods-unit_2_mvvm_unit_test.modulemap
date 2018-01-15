@@ -1,0 +1,6 @@
+framework module Pods_unit_2_mvvm_unit_test {
+  umbrella header "Pods-unit_2_mvvm_unit_test-umbrella.h"
+
+  export *
+  module * { export * }
+}
