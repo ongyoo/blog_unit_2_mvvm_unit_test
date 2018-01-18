@@ -39,6 +39,17 @@ class MainViewController: UIViewController {
     @IBAction func submitAction(_ sender: UIButton) {
         viewModel.input.saveMessageData(message: inputTextField.text)
     }
+    
+    // MARK : - Goto News List
+    @IBAction func gotoNewsListAction(_ sender: UIButton) {
+        viewModel.getBitCoinNews()
+    }
+    
+    func gotoNews() {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsTableViewController") as! NewsTableViewController
+        vc.configure(viewModel)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 //MARK: - Binding
@@ -47,6 +58,8 @@ extension MainViewController {
     func bindToViewModel() {
         viewModel.output.showMessageAlert = showAlert()
         viewModel.output.didError = didError()
+        viewModel.output.didSuccessBitCoinNews = didSuccessBitCoinNews()
+        viewModel.output.didErrorBitCoinNews = didErrorBitCoinNews()
     }
     
     func didError() -> (() -> Void) {
@@ -65,4 +78,20 @@ extension MainViewController {
             
         }
     }
+    
+    func didErrorBitCoinNews() -> ((Error) -> Void) {
+        return { [weak self] error in
+            guard let weakSelf = self else { return }
+        }
+    }
+    
+    func didSuccessBitCoinNews() -> ((ArticleResponse?) -> Void) {
+        return {  [weak self] article in
+            
+            guard let weakSelf = self else { return }
+            weakSelf.gotoNews()
+            
+        }
+    }
+
 }

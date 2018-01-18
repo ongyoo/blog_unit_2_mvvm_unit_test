@@ -5,6 +5,7 @@ target 'unit_2_mvvm_unit_test' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
   pod 'ObjectMapper', '~> 3.1'
+  pod 'SDWebImage', '~> 4.0'
 
   # Pods for unit_2_mvvm_unit_test
 

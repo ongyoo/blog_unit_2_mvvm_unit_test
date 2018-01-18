@@ -17,6 +17,8 @@ protocol MainInteractorInput {
 }
 
 protocol MainInteractorOutput: class {
+    var articles: [ArticleModel]? { get }
+    
     // Event
     var showMessageAlert: ((String) -> Void)? { get set }
     var didError: (() -> Void)? { get set }

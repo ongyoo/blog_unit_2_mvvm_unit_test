@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsTableViewCell" rowHeight="200" id="KGk-i7-Jjw" customClass="NewsTableViewCell" customModule="unit_2_mvvm_unit_test" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="199.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Gu-tI-HHb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Japan’s ‘Virtual Currency Girls’ debut to fan frenzy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUF-WN-WC3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="36"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yy-N8-5XL">
+                        <rect key="frame" x="0.0" y="139" width="320" height="60"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="0.1014287243150685" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <string key="text">Each of the eight girls in the band, known in Japanese as "Kasotsuka Shojo", plays a character representing a virtual currency such as bitcoin, ethereum or ripple. The post Japan’s ‘Virtual Currency Girls’ debut to fan frenzy appeared first on Inquirer Entert…</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="5Gu-tI-HHb" secondAttribute="trailing" id="04V-bZ-Qmc"/>
+                    <constraint firstItem="7yy-N8-5XL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="3Wt-ZY-Z6G"/>
+                    <constraint firstAttribute="bottom" secondItem="5Gu-tI-HHb" secondAttribute="bottom" id="HDB-gt-AmA"/>
+                    <constraint firstAttribute="trailing" secondItem="SUF-WN-WC3" secondAttribute="trailing" id="IsP-Y9-K9A"/>
+                    <constraint firstItem="SUF-WN-WC3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="RWb-Cw-2WC"/>
+                    <constraint firstItem="5Gu-tI-HHb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="SE6-EZ-mzh"/>
+                    <constraint firstItem="SUF-WN-WC3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="bLq-7F-XaZ"/>
+                    <constraint firstAttribute="bottom" secondItem="7yy-N8-5XL" secondAttribute="bottom" id="d3Z-Bd-Be1"/>
+                    <constraint firstAttribute="trailing" secondItem="7yy-N8-5XL" secondAttribute="trailing" id="jam-OD-EVZ"/>
+                    <constraint firstItem="5Gu-tI-HHb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="uV3-nN-whq"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="newsDetailLabel" destination="7yy-N8-5XL" id="jtq-SA-lIg"/>
+                <outlet property="newsImageView" destination="5Gu-tI-HHb" id="1J3-8R-HBt"/>
+                <outlet property="newsTitleLabel" destination="SUF-WN-WC3" id="E20-G9-Mov"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="132"/>
+        </tableViewCell>
+    </objects>
+</document>

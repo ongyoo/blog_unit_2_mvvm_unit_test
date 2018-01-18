@@ -9,6 +9,8 @@
 import UIKit
 
 class MainViewModel: MainInterface, MainInteractorOutput {
+    var articles: [ArticleModel]?
+    
     var input: MainInteractorInput { return self }
     var output: MainInteractorOutput { return self }
     
@@ -44,8 +46,11 @@ extension MainViewModel: MainInteractorInput {
     func getBitCoinNews() {
         service.getBitCoinNews(completion: { [weak self] (news) in
             guard let weakSelf = self else { return }
+            weakSelf.articles = news?.articles
+            weakSelf.didSuccessBitCoinNews?(news)
         }) { [weak self] (error) in
             guard let weakSelf = self else { return }
+            weakSelf.didErrorBitCoinNews?(error)
         }
     }
 }
