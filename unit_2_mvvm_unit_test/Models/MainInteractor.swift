@@ -22,6 +22,9 @@ protocol MainInteractorOutput: class {
     // Event
     var showMessageAlert: ((String) -> Void)? { get set }
     var didError: (() -> Void)? { get set }
+    var activityShow: (() -> Void)? { get set }
+    var activityHidden: (() -> Void)? { get set }
+    
     
     // MARK : - Output Service
     var didSuccessBitCoinNews: ((ArticleResponse?) -> Void)? { get set }

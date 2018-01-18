@@ -22,10 +22,8 @@ class MainService: MainServiceInterface {
                 // work Needs to be done
                 do {
                     let json = try JSONSerialization.jsonObject(with: data!) as? [String : Any]
-                    //print(json)
                     completion(Mapper<ArticleResponse>().map(JSON: json ?? [String : Any]()))
                 } catch {
-                    print("error")
                     failure(error)
                 }
             })

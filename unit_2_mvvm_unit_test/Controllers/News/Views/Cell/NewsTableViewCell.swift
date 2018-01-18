@@ -12,7 +12,6 @@ import SDWebImage
 class NewsTableViewCell: UITableViewCell {
     static let Identifier = "NewsTableViewCell"
     @IBOutlet weak var newsTitleLabel: UILabel!
-    @IBOutlet weak var newsDetailLabel: UILabel!
     @IBOutlet weak var newsImageView: UIImageView!
     
     override func awakeFromNib() {
@@ -25,7 +24,6 @@ class NewsTableViewCell: UITableViewCell {
         let imageUrl = dataModel.urlToImage else  { return }
         
         newsTitleLabel.text = dataModel.title ?? ""
-        newsDetailLabel.text = dataModel.des ?? ""
         
         // Image URL
         guard let url = URL(string: imageUrl) else { return }

@@ -10,6 +10,7 @@ import UIKit
 
 class MainViewController: UIViewController {
     @IBOutlet weak var inputTextField: UITextField!
+    @IBOutlet weak var loadActivityIndicatorView: UIActivityIndicatorView!
     
     var viewModel: MainInterface!
     
@@ -42,7 +43,7 @@ class MainViewController: UIViewController {
     
     // MARK : - Goto News List
     @IBAction func gotoNewsListAction(_ sender: UIButton) {
-        viewModel.getBitCoinNews()
+       viewModel.getBitCoinNews()
     }
     
     func gotoNews() {
@@ -60,6 +61,10 @@ extension MainViewController {
         viewModel.output.didError = didError()
         viewModel.output.didSuccessBitCoinNews = didSuccessBitCoinNews()
         viewModel.output.didErrorBitCoinNews = didErrorBitCoinNews()
+        
+        // Loading
+        viewModel.output.activityShow = activityShow()
+        viewModel.output.activityHidden = activityHidden()
     }
     
     func didError() -> (() -> Void) {
@@ -82,6 +87,7 @@ extension MainViewController {
     func didErrorBitCoinNews() -> ((Error) -> Void) {
         return { [weak self] error in
             guard let weakSelf = self else { return }
+            weakSelf.showAlert(msg: "Error didErrorBitCoinNews")
         }
     }
     
@@ -91,6 +97,23 @@ extension MainViewController {
             guard let weakSelf = self else { return }
             weakSelf.gotoNews()
             
+        }
+    }
+    
+    // MARK : - Loading
+    func activityShow() -> (() -> Void) {
+        return { [weak self] in
+            
+            guard let weakSelf = self else { return }
+            weakSelf.loadActivityIndicatorView.startAnimating()
+        }
+    }
+    
+    func activityHidden() -> (() -> Void) {
+        return { [weak self] in
+            
+            guard let weakSelf = self else { return }
+            weakSelf.loadActivityIndicatorView.stopAnimating()
         }
     }
 
